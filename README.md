@@ -15,3 +15,52 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## File Structure
+
+lib/
+    core/
+        constants/
+            api_endpoints.dart
+            app_colors.dart
+            app_strings.dart
+
+        network/
+            api_service.dart
+            api_exceptions.dart
+
+        util/
+            hilbers.dart
+            validators.dart
+
+    features/
+        auth/
+            data/
+            view/
+            wedgits/
+            cubit/
+
+        home/
+            data/
+            view/
+            wedgits/
+            cubit/
+        
+        product/
+            data/
+            view/
+            wedgits/
+            cubit/
+        
+        cart/
+            data/
+            view/
+            wedgits/
+            cubit/
+        
+        checkout/
+            data/
+            view/
+            wedgits/
+            cubit/
+    main.dart
