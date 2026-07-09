@@ -34,7 +34,7 @@ class _RootState extends State<Root> {
 
   @override
   void dispose() {
-    pageController.dispose(); // ✅ مهم جدًا
+    pageController.dispose();
     super.dispose();
   }
 
@@ -52,14 +52,19 @@ class _RootState extends State<Root> {
         itemBuilder: (context, index) => pages[index],
       ),
 
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.circular(20.r),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(10.r),
+        decoration: BoxDecoration(
+          color: AppColors.primaryColor,
+          borderRadius: BorderRadius.all(Radius.circular(20.r)),
+        ),
         child: BottomNavigationBar(
+          elevation: 0,
           currentIndex: currentScreen,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.grey,
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: Colors.transparent,
 
           items: const [
             BottomNavigationBarItem(
