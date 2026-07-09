@@ -50,6 +50,7 @@ class _RootState extends State<Root> {
           });
         },
         itemBuilder: (context, index) => pages[index],
+        physics: NeverScrollableScrollPhysics(),
       ),
 
       bottomNavigationBar: Container(
