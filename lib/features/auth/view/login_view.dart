@@ -1,4 +1,4 @@
-// features/auth/views/login_view.dart
+// features/auth/view/login_view.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
