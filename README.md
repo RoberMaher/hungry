@@ -37,30 +37,30 @@ lib/
         auth/
             data/
             view/
-            wedgits/
+            widgets/
             cubit/
 
         home/
             data/
             view/
-            wedgits/
+            widgets/
             cubit/
         
         product/
             data/
             view/
-            wedgits/
+            widgets/
             cubit/
         
         cart/
             data/
             view/
-            wedgits/
+            widgets/
             cubit/
         
         checkout/
             data/
             view/
-            wedgits/
+            widgets/
             cubit/
     main.dart
