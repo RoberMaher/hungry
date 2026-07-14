@@ -12,10 +12,9 @@ class UserHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Gap(60.h),
-
         Row(
           children: [
             SvgPicture.asset(
