@@ -1,6 +1,7 @@
 // shared/custom_text.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hungry/core/constants/app_colors.dart';
 
 class CustomText extends StatelessWidget {
   final String text;
@@ -12,7 +13,7 @@ class CustomText extends StatelessWidget {
     super.key,
     required this.text,
     this.size,
-    this.color,
+    this.color = AppColors.primaryColor,
     this.weight,
   });
 
