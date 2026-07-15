@@ -69,14 +69,17 @@ class Card_Item extends StatelessWidget {
                   Row(
                     children: [
                       /// Minus Button
-                      Container(
-                        width: 40.w,
-                        height: 40.h,
-                        decoration: BoxDecoration(
-                          color: AppColors.primaryColor,
-                          borderRadius: BorderRadius.circular(10),
+                      GestureDetector(
+                        onTap: onDecrement,
+                        child: Container(
+                          width: 40.w,
+                          height: 40.h,
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryColor,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Icon(Icons.remove, color: Colors.white),
                         ),
-                        child: Icon(Icons.remove, color: Colors.white),
                       ),
 
                       Gap(25.w),
@@ -91,14 +94,17 @@ class Card_Item extends StatelessWidget {
                       Gap(25.w),
 
                       /// Plus Button
-                      Container(
-                        width: 40.w,
-                        height: 40.h,
-                        decoration: BoxDecoration(
-                          color: AppColors.primaryColor,
-                          borderRadius: BorderRadius.circular(10),
+                      GestureDetector(
+                        onTap: onIncrement,
+                        child: Container(
+                          width: 40.w,
+                          height: 40.h,
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryColor,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Icon(Icons.add, color: Colors.white),
                         ),
-                        child: Icon(Icons.add, color: Colors.white),
                       ),
                     ],
                   ),
