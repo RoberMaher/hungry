@@ -7,6 +7,7 @@ import 'package:hungry/features/home/widgets/build_search_field.dart';
 import 'package:hungry/features/home/widgets/card_item.dart';
 import 'package:hungry/features/home/widgets/food_category.dart';
 import 'package:hungry/features/home/widgets/user_header.dart';
+import 'package:hungry/features/product/views/product_details_view.dart';
 
 class HomeView extends StatefulWidget {
   static const String routeName = '/home';
@@ -71,11 +72,20 @@ class _HomeViewState extends State<HomeView> {
               padding: EdgeInsets.all(15.w),
               sliver: SliverGrid(
                 delegate: SliverChildBuilderDelegate((context, index) {
-                  return const CardItem(
-                    image: 'assets/test/test1.png',
-                    title: 'Cheeseburger',
-                    description: "Wendy's Burger",
-                    rating: 4.9,
+                  return GestureDetector(
+                    onTap: () {
+                      // Handle card tap
+                      Navigator.pushNamed(
+                        context,
+                        ProductDetailsView.routeName,
+                      );
+                    },
+                    child: CardItem(
+                      image: 'assets/test/test1.png',
+                      title: 'Cheeseburger',
+                      description: "Wendy's Burger",
+                      rating: 4.9,
+                    ),
                   );
                 }, childCount: 6),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
