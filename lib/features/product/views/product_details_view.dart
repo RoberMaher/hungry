@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:hungry/core/constants/app_colors.dart';
 import 'package:hungry/features/product/widgets/adds_card.dart';
 import 'package:hungry/features/product/widgets/spicy_slider.dart';
 import 'package:hungry/shared/custom_button.dart';
@@ -28,7 +29,11 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Icon(Icons.arrow_back, color: Colors.black, size: 20.sp),
+          child: Icon(
+            Icons.arrow_back,
+            color: AppColors.primaryColor,
+            size: 20.sp,
+          ),
         ),
       ),
 
