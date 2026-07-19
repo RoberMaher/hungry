@@ -33,10 +33,11 @@ class _HomeViewState extends State<HomeView> {
           slivers: [
             /// Header
             SliverAppBar(
+              automaticallyImplyLeading: false,
               elevation: 0,
               scrolledUnderElevation: 0,
               pinned: true,
-              toolbarHeight: 160.h,
+              toolbarHeight: 190.h,
               backgroundColor: Colors.white,
               flexibleSpace: Padding(
                 padding: EdgeInsets.only(top: 60.0.h, left: 20.w, right: 20.w),
