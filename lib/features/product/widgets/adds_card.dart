@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hungry/core/constants/app_colors.dart';
+import 'package:hungry/shared/custom_text.dart';
 
 class AddsCard extends StatelessWidget {
   final String imageUrl;
@@ -59,14 +60,7 @@ class AddsCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                title,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+              CustomText(text: title, size: 12.sp, weight: FontWeight.w500, color: Colors.white),
 
               Container(
                 height: 22.h,

@@ -21,138 +21,141 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
   double sliderValue = 0.5;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
+    return SafeArea(
+      top: false,
+      child: Scaffold(
         backgroundColor: Colors.white,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back,
-            color: AppColors.primaryColor,
-            size: 20.sp,
-          ),
-        ),
-      ),
-
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0).w,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SpicySlider(
-                value: sliderValue,
-                onChanged: (value) {
-                  setState(() => sliderValue = value);
-                },
-              ),
-
-              Gap(20.h),
-
-              CustomText(
-                text: 'Toppings',
-                size: 20.sp,
-                weight: FontWeight.bold,
-              ),
-
-              Gap(10.h),
-
-              SingleChildScrollView(
-                clipBehavior: Clip.none,
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                    6,
-                    (index) => Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: AddsCard(
-                        imageUrl: 'assets/images/tomato.png',
-                        title: 'Tomato',
-                        onAdd: () {
-                          // Handle add action
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-              Gap(20.h),
-
-              CustomText(
-                text: 'Side Options',
-                size: 20.sp,
-                weight: FontWeight.bold,
-              ),
-
-              Gap(10.h),
-
-              SingleChildScrollView(
-                clipBehavior: Clip.none,
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                    6,
-                    (index) => Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: AddsCard(
-                        imageUrl: 'assets/images/tomato.png',
-                        title: 'Tomato',
-                        onAdd: () {
-                          // Handle add action
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.all(20.w),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.r),
-            topRight: Radius.circular(20.r),
-          ),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.15),
-              blurRadius: 10,
-              offset: Offset(0, -4),
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back,
+              color: AppColors.primaryColor,
+              size: 20.sp,
             ),
-          ],
+          ),
         ),
-        child: Row(
-          children: [
-            Column(
+      
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0).w,
+          child: SingleChildScrollView(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
               children: [
+                SpicySlider(
+                  value: sliderValue,
+                  onChanged: (value) {
+                    setState(() => sliderValue = value);
+                  },
+                ),
+      
+                Gap(20.h),
+      
                 CustomText(
-                  text: 'Total Price',
-                  size: 18.sp,
+                  text: 'Toppings',
+                  size: 20.sp,
                   weight: FontWeight.bold,
                 ),
+      
+                Gap(10.h),
+      
+                SingleChildScrollView(
+                  clipBehavior: Clip.none,
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                      6,
+                      (index) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: AddsCard(
+                          imageUrl: 'assets/images/tomato.png',
+                          title: 'Tomato',
+                          onAdd: () {
+                            // Handle add action
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+      
+                Gap(20.h),
+      
                 CustomText(
-                  text: '\$12.99',
-                  size: 16.sp,
-                  weight: FontWeight.w500,
+                  text: 'Side Options',
+                  size: 20.sp,
+                  weight: FontWeight.bold,
+                ),
+      
+                Gap(10.h),
+      
+                SingleChildScrollView(
+                  clipBehavior: Clip.none,
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                      6,
+                      (index) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: AddsCard(
+                          imageUrl: 'assets/images/tomato.png',
+                          title: 'Tomato',
+                          onAdd: () {
+                            // Handle add action
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
-
-            Spacer(),
-
-            CustomButton(onPressed: () {}, text: 'Add to Cart'),
-          ],
+          ),
+        ),
+      
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.all(20.w),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.r),
+              topRight: Radius.circular(20.r),
+            ),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.15),
+                blurRadius: 10,
+                offset: Offset(0, -4),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CustomText(
+                    text: 'Total Price',
+                    size: 18.sp,
+                    weight: FontWeight.bold,
+                  ),
+                  CustomText(
+                    text: '\$12.99',
+                    size: 16.sp,
+                    weight: FontWeight.w500,
+                  ),
+                ],
+              ),
+      
+              Spacer(),
+      
+              CustomButton(onPressed: () {}, text: 'Add to Cart'),
+            ],
+          ),
         ),
       ),
     );
