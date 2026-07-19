@@ -109,7 +109,7 @@ class Card_Item extends StatelessWidget {
                     ],
                   ),
 
-                  Gap(40.h),
+                  Gap(20.h),
 
                   Container(
                     width: 154.w,

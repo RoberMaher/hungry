@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hungry/features/cart/widgets/card_item.dart';
+import 'package:hungry/features/checkout/views/checkout_view.dart';
 import 'package:hungry/shared/custom_button.dart';
 import 'package:hungry/shared/custom_text.dart';
 
@@ -54,46 +55,51 @@ class _CartViewState extends State<CartView> {
                 },
               ),
             ),
+          ],
+        ),
+      ),
 
-            /// BOTTOM BAR
-            Container(
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(20),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(20.w),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.r),
+            topRight: Radius.circular(20.r),
+          ),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.15),
+              blurRadius: 10,
+              offset: Offset(0, -4),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomText(
+                  text: 'Total Price',
+                  size: 18.sp,
+                  weight: FontWeight.bold,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.15),
-                    blurRadius: 10,
-                    offset: const Offset(0, -4), // 🔥 من فوق بس
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: 'Total Price',
-                        size: 18.sp,
-                        weight: FontWeight.bold,
-                      ),
-                      CustomText(
-                        text: '\$12.99',
-                        size: 16.sp,
-                        weight: FontWeight.w500,
-                      ),
-                    ],
-                  ),
+                CustomText(
+                  text: '\$12.99',
+                  size: 16.sp,
+                  weight: FontWeight.w500,
+                ),
+              ],
+            ),
 
-                  const Spacer(),
+            Spacer(),
 
-                  CustomButton(onPressed: () {}, text: 'Checkout'),
-                ],
-              ),
+            Expanded(
+              child: CustomButton(onPressed: () {
+                Navigator.pushNamed(context, CheckoutView.routeName);
+              }, text: 'Checkout'),
             ),
           ],
         ),

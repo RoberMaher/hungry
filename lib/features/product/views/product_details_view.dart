@@ -109,37 +109,50 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   ),
                 ),
               ),
-
-              Gap(20.h),
-
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: 'Total Price',
-                        size: 20.sp,
-                        weight: FontWeight.bold,
-                      ),
-                      CustomText(
-                        text: '\$12.99',
-                        size: 18.sp,
-                        weight: FontWeight.w500,
-                      ),
-                    ],
-                  ),
-                  Spacer(),
-                  CustomButton(
-                    onPressed: () {
-                      // Handle add to cart action
-                    },
-                    text: 'Add to Cart',
-                  ),
-                ],
-              ),
             ],
           ),
+        ),
+      ),
+
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.all(20.w),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.r),
+            topRight: Radius.circular(20.r),
+          ),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.15),
+              blurRadius: 10,
+              offset: Offset(0, -4),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomText(
+                  text: 'Total Price',
+                  size: 18.sp,
+                  weight: FontWeight.bold,
+                ),
+                CustomText(
+                  text: '\$12.99',
+                  size: 16.sp,
+                  weight: FontWeight.w500,
+                ),
+              ],
+            ),
+
+            Spacer(),
+
+            CustomButton(onPressed: () {}, text: 'Add to Cart'),
+          ],
         ),
       ),
     );

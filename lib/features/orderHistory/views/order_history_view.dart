@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:hungry/core/constants/app_colors.dart';
+import 'package:hungry/features/checkout/views/checkout_view.dart';
 import 'package:hungry/shared/custom_button.dart';
 import 'package:hungry/shared/custom_text.dart';
 
@@ -107,7 +108,12 @@ class OrderHistoryView extends StatelessWidget {
 
                     const Spacer(),
 
-                    CustomButton(onPressed: () {}, text: 'Checkout'),
+                    CustomButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, CheckoutView.routeName);
+                      },
+                      text: 'Checkout',
+                    ),
                   ],
                 ),
               ),
