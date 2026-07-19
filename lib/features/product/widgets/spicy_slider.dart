@@ -20,7 +20,7 @@ class _SpicySliderState extends State<SpicySlider> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset('assets/images/ProductDetails.png', height: 250.h),
+        Image.asset('assets/images/ProductDetails.png', width: 150.w, height: 250.h),
         Spacer(),
         Column(
           children: [
