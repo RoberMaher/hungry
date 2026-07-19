@@ -66,7 +66,7 @@ class _LoginViewState extends State<LoginView> {
                   weight: FontWeight.w500,
                 ),
 
-                Gap(100.h),
+                Gap(60.h),
 
                 Expanded(
                   child: Container(

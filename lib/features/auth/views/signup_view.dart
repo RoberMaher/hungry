@@ -50,100 +50,103 @@ class _SignupViewState extends State<SignupView> {
       onTap: () {
         FocusScope.of(context).unfocus();
       },
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                Gap(160.h),
-
-                SvgPicture.asset(
-                  'assets/icons/logo.svg',
-                  color: AppColors.primaryColor,
-                ),
-                CustomText(text: 'Welcome to Our Food App'),
-
-                Gap(100.h),
-
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20.w,
-                      vertical: 30.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30.r),
-                        topRight: Radius.circular(30.r),
+      child: SafeArea(
+        top: false,
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          body: Center(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  Gap(160.h),
+        
+                  SvgPicture.asset(
+                    'assets/icons/logo.svg',
+                    color: AppColors.primaryColor,
+                  ),
+                  CustomText(text: 'Welcome to Our Food App'),
+        
+                  Gap(70.h),
+        
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.w,
+                        vertical: 30.h,
                       ),
-                    ),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Gap(20.h),
-                          CustomTextField(
-                            hint: 'Name',
-                            controller: nameController,
-                          ),
-                          Gap(15.h),
-                          CustomTextField(
-                            hint: 'Email Address',
-                            controller: emailController,
-                          ),
-                          Gap(15.h),
-                          CustomTextField(
-                            hint: 'Password',
-                            controller: passwordController,
-                            isPassword: true,
-                          ),
-                          Gap(15.h),
-                          CustomTextField(
-                            hint: 'Confirm Password',
-                            controller: confirmPasswordController,
-                            isPassword: true,
-                          ),
-                          Gap(30.h),
-                          CustomAuthButton(
-                            onTap: () {
-                              if (_formKey.currentState!.validate()) {
-                                // Handle signup logic here
-                                print('Name: ${nameController.text}');
-                                print('Email: ${emailController.text}');
-                                print('Password: ${passwordController.text}');
-                              }
-                            },
-                            text: 'Sign Up',
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CustomText(
-                                text: 'Already have an account?',
-                                color: Colors.white,
-                              ),
-                              Transform.translate(
-                                offset: const Offset(-7, 0),
-                                child: CustomTextButton(
-                                  text: 'Login',
-                                  ontap: () {
-                                    Navigator.pushNamed(
-                                      context,
-                                      LoginView.routeName,
-                                    );
-                                  },
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30.r),
+                          topRight: Radius.circular(30.r),
+                        ),
+                      ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Gap(20.h),
+                            CustomTextField(
+                              hint: 'Name',
+                              controller: nameController,
+                            ),
+                            Gap(15.h),
+                            CustomTextField(
+                              hint: 'Email Address',
+                              controller: emailController,
+                            ),
+                            Gap(15.h),
+                            CustomTextField(
+                              hint: 'Password',
+                              controller: passwordController,
+                              isPassword: true,
+                            ),
+                            Gap(15.h),
+                            CustomTextField(
+                              hint: 'Confirm Password',
+                              controller: confirmPasswordController,
+                              isPassword: true,
+                            ),
+                            Gap(30.h),
+                            CustomAuthButton(
+                              onTap: () {
+                                if (_formKey.currentState!.validate()) {
+                                  // Handle signup logic here
+                                  print('Name: ${nameController.text}');
+                                  print('Email: ${emailController.text}');
+                                  print('Password: ${passwordController.text}');
+                                }
+                              },
+                              text: 'Sign Up',
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomText(
+                                  text: 'Already have an account?',
+                                  color: Colors.white,
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                                Transform.translate(
+                                  offset: const Offset(-7, 0),
+                                  child: CustomTextButton(
+                                    text: 'Login',
+                                    ontap: () {
+                                      Navigator.pushNamed(
+                                        context,
+                                        LoginView.routeName,
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
