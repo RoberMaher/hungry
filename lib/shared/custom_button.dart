@@ -1,6 +1,7 @@
 // shared/custom_button.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:hungry/core/constants/app_colors.dart';
 import 'package:hungry/shared/custom_text.dart';
 
@@ -9,6 +10,7 @@ class CustomButton extends StatelessWidget {
   final String text;
   final double? width;
   final Color? color;
+  final IconData? icon;
 
   const CustomButton({
     super.key,
@@ -16,6 +18,7 @@ class CustomButton extends StatelessWidget {
     required this.text,
     this.width,
     this.color,
+    this.icon,
   });
 
   @override
@@ -31,12 +34,26 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.r),
           ),
         ),
-        child: CustomText(
-          text: text,
-          size: 16.sp,
-          weight: FontWeight.bold,
-          color: Colors.white,
-        ),
+        child: icon != null
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, color: Colors.white),
+                  Gap(10.w),
+                  CustomText(
+                    text: text,
+                    size: 16.sp,
+                    weight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ],
+              )
+            : CustomText(
+                text: text,
+                size: 16.sp,
+                weight: FontWeight.bold,
+                color: Colors.white,
+              ),
       ),
     );
   }
