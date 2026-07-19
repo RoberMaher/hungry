@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SignupView(),
+        home: SplashView(),
         routes: {
           SplashView.routeName: (context) => const SplashView(),
           LoginView.routeName: (context) => const LoginView(),
