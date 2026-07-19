@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:hungry/core/constants/app_colors.dart';
-import 'package:hungry/root.dart';
+import 'package:hungry/features/auth/views/login_view.dart';
 
 class SplashView extends StatefulWidget {
   static const String routeName = '/splash';
@@ -52,7 +52,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     /// Navigation
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
-        Navigator.pushReplacementNamed(context, Root.routeName);
+        Navigator.pushReplacementNamed(context, LoginView.routeName);
       }
     });
   }
