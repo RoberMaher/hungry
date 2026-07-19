@@ -4,15 +4,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hungry/core/constants/app_colors.dart';
 
 class CustomTextField extends StatefulWidget {
-  final String hint;
+  final String? hint;
+  final String? label;
   final TextEditingController controller;
   final bool isPassword;
+  final Color color;
 
   const CustomTextField({
     super.key,
-    required this.hint,
+    this.hint,
+    this.label,
     required this.controller,
     this.isPassword = false,
+    this.color = Colors.white,
   });
 
   @override
@@ -30,10 +34,21 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(
+        color: widget.color == Colors.white
+            ? AppColors.primaryColor
+            : Colors.white,
+        fontSize: 14.sp,
+      ),
       controller: widget.controller,
       cursorHeight: 15.h,
-      cursorColor: AppColors.primaryColor,
+      cursorColor: widget.color == Colors.white
+          ? AppColors.primaryColor
+          : Colors.white,
       decoration: InputDecoration(
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        labelStyle: TextStyle(color: Colors.white, fontSize: 14.sp),
+        labelText: widget.label,
         suffixIcon: widget.isPassword
             ? GestureDetector(
                 onTap: () {
@@ -43,14 +58,16 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 },
                 child: Icon(
                   _obscureText ? Icons.visibility_off : Icons.visibility,
-                  color: AppColors.primaryColor,
+                  color: widget.color == Colors.white
+                      ? AppColors.primaryColor
+                      : Colors.white,
                   size: 20.sp,
                 ),
               )
             : null,
         hintText: widget.hint,
         filled: true,
-        fillColor: Colors.white,
+        fillColor: widget.color,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(color: Colors.white),
